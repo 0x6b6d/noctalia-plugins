@@ -1,0 +1,216 @@
+id = "kurai/taskwarrior"
+name = "Taskwarrior"
+version = "0.1.0"
+plugin_api = 26
+author = "kurai"
+license = "MIT"
+icon = "checklist"
+description = "Bar widget + tabbed panel UI layer for Taskwarrior (task)."
+tags = ["bar", "panel", "productivity"]
+dependencies = ["task"]
+
+[[setting]]
+key = "task_bin"
+type = "string"
+label_key = "settings.task_bin.label"
+description_key = "settings.task_bin.description"
+default = "task"
+
+[[setting]]
+key = "taskrc_path"
+type = "string"
+label_key = "settings.taskrc_path.label"
+description_key = "settings.taskrc_path.description"
+default = ""
+
+[[setting]]
+key = "data_location"
+type = "string"
+label_key = "settings.data_location.label"
+description_key = "settings.data_location.description"
+default = ""
+
+[[setting]]
+key = "poll_seconds"
+type = "int"
+label_key = "settings.poll_seconds.label"
+description_key = "settings.poll_seconds.description"
+default = 15
+min = 5
+max = 300
+
+[[setting]]
+key = "badge_mode"
+type = "select"
+label_key = "settings.badge_mode.label"
+description_key = "settings.badge_mode.description"
+default = "pending"
+
+  [[setting.options]]
+  value = "pending"
+  label_key = "settings.badge_mode.options.pending"
+
+  [[setting.options]]
+  value = "overdue"
+  label_key = "settings.badge_mode.options.overdue"
+
+  [[setting.options]]
+  value = "active"
+  label_key = "settings.badge_mode.options.active"
+
+  [[setting.options]]
+  value = "today"
+  label_key = "settings.badge_mode.options.today"
+
+[[setting]]
+key = "show_completed"
+type = "bool"
+label_key = "settings.show_completed.label"
+description_key = "settings.show_completed.description"
+default = false
+
+[[setting]]
+key = "project_filter"
+type = "string"
+label_key = "settings.project_filter.label"
+description_key = "settings.project_filter.description"
+default = ""
+
+[[widget]]
+id = "bar"
+entry = "widget.luau"
+
+  [[widget.setting]]
+  key = "show_glyph"
+  type = "bool"
+  label_key = "settings.show_glyph.label"
+  default = true
+
+  [[widget.setting]]
+  key = "glyph"
+  type = "glyph"
+  label_key = "settings.glyph.label"
+  description_key = "settings.glyph.description"
+  default = "checklist"
+
+  [[widget.setting]]
+  key = "show_count"
+  type = "bool"
+  label_key = "settings.show_count.label"
+  description_key = "settings.show_count.description"
+  default = true
+
+  [[widget.setting]]
+  key = "show_refresh"
+  type = "bool"
+  label_key = "settings.show_refresh.label"
+  description_key = "settings.show_refresh.description"
+  default = true
+
+  [[widget.setting]]
+  key = "use_overdue_glyph"
+  type = "bool"
+  label_key = "settings.use_overdue_glyph.label"
+  description_key = "settings.use_overdue_glyph.description"
+  default = true
+
+  [[widget.setting]]
+  key = "overdue_glyph"
+  type = "glyph"
+  label_key = "settings.overdue_glyph.label"
+  description_key = "settings.overdue_glyph.description"
+  default = "alert-triangle"
+
+  [[widget.setting]]
+  key = "show_overdue"
+  type = "bool"
+  label_key = "settings.show_overdue.label"
+  description_key = "settings.show_overdue.description"
+  default = false
+
+  [[widget.setting]]
+  key = "show_active"
+  type = "bool"
+  label_key = "settings.show_active.label"
+  description_key = "settings.show_active.description"
+  default = false
+
+  [[widget.setting]]
+  key = "show_today"
+  type = "bool"
+  label_key = "settings.show_today.label"
+  description_key = "settings.show_today.description"
+  default = false
+
+  [[widget.setting]]
+  key = "show_next_task"
+  type = "bool"
+  label_key = "settings.show_next_task.label"
+  description_key = "settings.show_next_task.description"
+  default = false
+
+  [[widget.setting]]
+  key = "highlight_overdue"
+  type = "bool"
+  label_key = "settings.highlight_overdue.label"
+  description_key = "settings.highlight_overdue.description"
+  default = true
+
+  [[widget.setting]]
+  key = "hide_when_empty"
+  type = "bool"
+  label_key = "settings.hide_when_empty.label"
+  description_key = "settings.hide_when_empty.description"
+  default = false
+
+  [[widget.setting]]
+  key = "click_tab"
+  type = "select"
+  label_key = "settings.click_tab.label"
+  description_key = "settings.click_tab.description"
+  default = "tasks"
+
+  [[widget.setting.options]]
+  value = "tasks"
+  label_key = "settings.click_tab.options.tasks"
+
+  [[widget.setting.options]]
+  value = "add"
+  label_key = "settings.click_tab.options.add"
+
+  [[widget.setting]]
+  key = "right_click_tab"
+  type = "select"
+  label_key = "settings.right_click_tab.label"
+  description_key = "settings.right_click_tab.description"
+  default = "add"
+
+  [[widget.setting.options]]
+  value = "tasks"
+  label_key = "settings.right_click_tab.options.tasks"
+
+  [[widget.setting.options]]
+  value = "add"
+  label_key = "settings.right_click_tab.options.add"
+
+  [[widget.setting]]
+  key = "show_next_in_tooltip"
+  type = "bool"
+  label_key = "settings.show_next_in_tooltip.label"
+  description_key = "settings.show_next_in_tooltip.description"
+  default = true
+
+[[service]]
+id = "sync"
+entry = "service.luau"
+
+[[panel]]
+id = "tasks"
+entry = "panel.luau"
+width = 520
+height = 520
+placement = "floating"
+position = "center"
+open_near_click = true
+keyboard_focus = "exclusive"
+capture_keys = ["ctrl+n"]

@@ -1,0 +1,327 @@
+{
+  "title": "Taskwarrior",
+  "tabs": {
+    "tasks": "Tasks",
+    "add": "Add",
+    "edit": "Edit",
+    "projects": "Projects",
+    "tags": "Tags",
+    "stats": "Stats"
+  },
+  "settings": {
+    "task_bin": {
+      "label": "Task binary",
+      "description": "Path or name of the `task` executable on PATH."
+    },
+    "taskrc_path": {
+      "label": "Taskrc path",
+      "description": "Alternate rc file (empty = ~/.taskrc or $TASKRC). Passed as rc:<path>."
+    },
+    "data_location": {
+      "label": "Data location",
+      "description": "Default data dir offered during auto-init (empty = ~/.task)."
+    },
+    "poll_seconds": {
+      "label": "Refresh interval",
+      "description": "How often the background service re-exports tasks."
+    },
+    "badge_mode": {
+      "label": "Badge count",
+      "description": "Which count the bar widget badge shows.",
+      "options": {
+        "pending": "Pending",
+        "overdue": "Overdue",
+        "active": "Active (started)",
+        "today": "Due today"
+      }
+    },
+    "show_completed": {
+      "label": "Include completed in list",
+      "description": "Default status filter also matches completed tasks."
+    },
+    "show_glyph": {
+      "label": "Show glyph"
+    },
+    "glyph": {
+      "label": "Glyph",
+      "description": "Glyph shown before the count."
+    },
+    "show_count": {
+      "label": "Show count",
+      "description": "Show the task count badge. Off = icon-only button."
+    },
+    "show_refresh": {
+      "label": "Show refresh button",
+      "description": "Inline refresh button in the widget."
+    },
+    "use_overdue_glyph": {
+      "label": "Swap glyph when overdue",
+      "description": "Use the overdue glyph while anything is overdue."
+    },
+    "overdue_glyph": {
+      "label": "Overdue glyph",
+      "description": "Glyph shown while anything is overdue."
+    },
+    "show_overdue": {
+      "label": "Overdue pill",
+      "description": "Extra overdue count pill. Shown only while overdue is above zero."
+    },
+    "show_active": {
+      "label": "Active pill",
+      "description": "Extra pill with the started-task count."
+    },
+    "show_today": {
+      "label": "Due-today pill",
+      "description": "Extra pill with the due-today count."
+    },
+    "show_next_task": {
+      "label": "Next task text",
+      "description": "Inline highest-urgency task description, truncated to fit the bar."
+    },
+    "highlight_overdue": {
+      "label": "Highlight overdue",
+      "description": "Tint the badge red while anything is overdue."
+    },
+    "hide_when_empty": {
+      "label": "Hide when empty",
+      "description": "Hide the whole widget while the count is zero."
+    },
+    "project_filter": {
+      "label": "Track project",
+      "description": "Count only this project (empty = all). Unknown names fall back to all."
+    },
+    "click_tab": {
+      "label": "Click opens",
+      "description": "Which tab a left click opens.",
+      "options": {
+        "tasks": "Tasks",
+        "add": "Add"
+      }
+    },
+    "right_click_tab": {
+      "label": "Right click opens",
+      "description": "Which tab a right click opens.",
+      "options": {
+        "tasks": "Tasks",
+        "add": "Add"
+      }
+    },
+    "show_next_in_tooltip": {
+      "label": "Tooltip shows next task",
+      "description": "Include the highest-urgency task in the tooltip."
+    }
+  },
+  "common": {
+    "clear": "Clear",
+    "filter": "Filter",
+    "back_to_tasks": "← Tasks",
+    "all_projects": "All projects",
+    "form": {
+      "description": "Description",
+      "project": "Project",
+      "priority": "Priority",
+      "due": "Due",
+      "scheduled": "Scheduled",
+      "wait": "Wait",
+      "tags": "Tags (space separated)"
+    }
+  },
+  "filter": {
+    "status": {
+      "pending": "Pending",
+      "waiting": "Waiting",
+      "completed": "Completed",
+      "all": "All"
+    },
+    "sort": {
+      "urgency": "Urgency",
+      "due": "Due",
+      "created": "Created",
+      "priority": "Priority"
+    },
+    "pri": {
+      "all": "All",
+      "high": "H",
+      "medium": "M",
+      "low": "L",
+      "none": "None"
+    },
+    "due": {
+      "all": "Any date",
+      "overdue": "Overdue",
+      "today": "Today",
+      "week": "Next 7 days",
+      "nodue": "No date"
+    },
+    "detail_pri": {
+      "none": "None",
+      "high": "H",
+      "medium": "M",
+      "low": "L"
+    }
+  },
+  "tasks": {
+    "search_placeholder": "Search description, project, tag…",
+    "filters_label": "Filters:",
+    "count_line": "{shown} shown · {pending} pending · {overdue} overdue",
+    "empty_title": "All clear",
+    "empty_hint": "No tasks match. Adjust filters or add one.",
+    "notes": {
+      "one": "1 note",
+      "other": "{count} notes"
+    },
+    "pri_high": "High",
+    "pri_medium": "Medium",
+    "pri_low": "Low",
+    "due_overdue": "Overdue · {date}",
+    "due_today": "Today · {date}",
+    "actions": "Actions",
+    "mark_done": "Mark done",
+    "start": "Start",
+    "stop": "Stop",
+    "done": "Done"
+  },
+  "add": {
+    "description": "Description *",
+    "description_placeholder": "What needs doing?",
+    "project_placeholder": "project",
+    "due_placeholder": "tomorrow",
+    "scheduled_placeholder": "today",
+    "wait_placeholder": "friday",
+    "tags_placeholder": "home urgent",
+    "note_title": "Note (optional)",
+    "note_placeholder": "Details, context, links…",
+    "save": "Add task",
+    "save_clear": "Add + clear",
+    "date_hint": "Natural dates work: today, tomorrow, eow, 2026-12-01."
+  },
+  "edit": {
+    "empty_title": "Nothing selected",
+    "empty_hint": "Pick a task from the Tasks tab (pencil button), then edit it here.",
+    "go_to_tasks": "Go to Tasks",
+    "title": "Edit · {id}",
+    "status_completed": "Completed",
+    "status_recurring": "Recurring",
+    "start": "Start",
+    "stop": "Stop",
+    "done": "Done",
+    "delete": "Delete task",
+    "confirm_delete": "Tap again to confirm",
+    "confirm_delete_hint": "Tap Delete again within 8s to confirm",
+    "save": "Save changes",
+    "notes_title": "Notes",
+    "remove_note": "Remove note",
+    "no_notes": "No notes yet.",
+    "note_placeholder": "Add a note…",
+    "note_add": "Add note",
+    "due_hint": "e.g. tomorrow",
+    "scheduled_hint": "e.g. today",
+    "wait_hint": "e.g. friday",
+    "tags_placeholder": "home urgent",
+    "project_placeholder": "project"
+  },
+  "projects": {
+    "tracking_all": "Tracking: all projects",
+    "tracking": "Tracking: {name}",
+    "tracking_settings": "Tracking: {name} (settings)",
+    "track_all_tooltip": "Track all projects in widget",
+    "track_tooltip": "Track in widget",
+    "tracked_tooltip": "Tracked in widget (click to untrack)",
+    "track_set": "Widget now tracking {name}",
+    "track_set_all": "Widget now tracking all projects",
+    "track_reverted": "Widget tracking reverted to settings",
+    "track_pinned": "This project is pinned in widget settings - change it there to untrack.",
+    "counts": "{open} open · {done} done",
+    "count": {
+      "one": "1 project",
+      "other": "{count} projects"
+    },
+    "filter_tooltip": "Filter the task list",
+    "empty_title": "No projects",
+    "empty_hint": "Assign a project when adding a task and it shows up here."
+  },
+  "tags": {
+    "hint": "Tap a tag to filter Tasks. Tap again to clear.",
+    "empty_title": "No tags",
+    "empty_hint": "Add +tag words when creating a task and they show up here."
+  },
+  "stats": {
+    "pending": "Pending",
+    "overdue": "Overdue",
+    "active": "Active",
+    "done": "Done",
+    "waiting": "Waiting",
+    "due_today": "Due today",
+    "graph_title": "Completed per day (last 14 days)",
+    "oldest": "Oldest pending",
+    "oldest_none": "—",
+    "oldest_age": "{desc} ({age}d old)",
+    "sync": "Sync",
+    "undo": "Undo",
+    "undo_tooltip": "Undo last change (any source, incl. CLI/sync)"
+  },
+  "setup": {
+    "title": "Taskwarrior setup",
+    "data_title": "1. Data location",
+    "data_placeholder": "~/.task",
+    "rc_title": "2. Rc file",
+    "init": "Initialize",
+    "terminal": "Open terminal setup",
+    "terminal_short": "Open terminal",
+    "retry": "Retry",
+    "stuck_hint": "3. Still stuck? Create the config by hand, or point Taskrc path at an existing file in plugin settings.",
+    "error_title": "Taskwarrior error",
+    "error_hint": "This doesn't look like a missing database, so auto-setup is disabled to protect your config. Fix it in a terminal, or point Taskrc path at another file in plugin settings."
+  },
+  "widget": {
+    "refresh": "Refresh tasks",
+    "pending": "Pending",
+    "overdue": "Overdue",
+    "due_today": "Due today",
+    "waiting": "Waiting",
+    "next": "Next",
+    "project": "Project",
+    "tracking": "Tracking",
+    "not_found": "{name} — not found, showing all",
+    "backend_error": "Taskwarrior: {error}",
+    "next_due": " - due {due}"
+  },
+  "status": {
+    "running": "Running…",
+    "task_completed": "Task completed",
+    "task_deleted": "Task deleted",
+    "timer_started": "Timer started",
+    "timer_stopped": "Timer stopped",
+    "task_updated": "Task updated",
+    "task_updated_skipped": "Task updated (skipped tags: {tags})",
+    "no_changes": "No changes",
+    "kept_description": "Description empty — kept existing text",
+    "required_description": "Description is required",
+    "task_added": "Task added",
+    "task_added_skipped": "Task added (skipped tags: {tags})",
+    "task_note_added": "Task + note added",
+    "note_added": "Note added",
+    "note_removed": "Note removed",
+    "note_skipped_missing": "Task added, note skipped (task not found)",
+    "note_skipped_unreadable": "Task added, note skipped (export unreadable)",
+    "note_failed": "Task added, note failed: {error}",
+    "undo_done": "Undo finished",
+    "sync_none": "Sync isn't configured — data is local, nothing to do",
+    "sync_none_body": "No sync replica configured. See task-sync(5) to set one up.",
+    "sync_done": "Sync finished ({server})",
+    "no_binary": "Task binary not found: {bin}",
+    "export_failed": "task export failed",
+    "export_unreadable": "task export unreadable",
+    "command_failed": "command failed",
+    "mkdir_failed": "Could not create {dir}",
+    "write_failed": "Could not write {rc}",
+    "initialized": "Initialized {rc}",
+    "refuse_overwrite": "Refusing to overwrite non-empty {rc}",
+    "export_empty": "Task produced no result",
+    "export_failed_exit": "task export failed (exit {code})",
+    "history_unreadable": "completed history unreadable",
+    "count_unreadable": "count unreadable",
+    "task_note_added_skipped": "Task + note added (skipped tags: {tags})",
+    "decode_error": "task export is not valid JSON"
+  }
+}
