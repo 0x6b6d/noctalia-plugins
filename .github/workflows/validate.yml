@@ -1,0 +1,27 @@
+# Personal smoke checks — leaner than community-plugins' full store validator.
+
+# Adapted from https://github.com/OHMCFXG/noctalia-plugins
+# (.github/workflows/validate.yml)
+name: Validate plugins
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate plugin manifests
+        run: python3 .github/scripts/validate_plugins.py

@@ -1,0 +1,44 @@
+# Rebuild catalog.toml from each */plugin.toml when plugins change.
+# Unlike community CI, this runs on any fork/personal repo (no repo-name guard).
+
+# Adapted from https://github.com/OHMCFXG/noctalia-plugins
+# (.github/workflows/update-catalog.yml)
+name: Update catalog
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - catalog.toml
+      - "**.md"
+  workflow_dispatch:
+
+concurrency:
+  group: update-catalog-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rebuild catalog.toml
+        run: python3 .github/scripts/update_catalog.py
+
+      - name: Commit if changed
+        run: |
+          git add catalog.toml
+          if git diff --cached --quiet catalog.toml; then
+            echo "catalog.toml unchanged"
+            exit 0
+          fi
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git commit -m "chore: update plugin catalog [skip ci]"
+          git push
