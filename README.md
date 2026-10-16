@@ -73,7 +73,7 @@ Rules of thumb:
 
 ### Prerequisites
 
-- [Noctalia](https://github.com/noctalia-dev/noctalia) v5 (plugin API 3+)
+- [Noctalia](https://github.com/noctalia-dev/noctalia) v5 (plugin API 26+)
 - `python3` (for local checks)
 - Optional: [`luau-lsp`](https://github.com/JohnnyMorganz/luau-lsp) + editor config in-repo
 
