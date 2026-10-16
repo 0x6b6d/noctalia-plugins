@@ -1,6 +1,7 @@
 # noctalia-plugins
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Validate plugins](https://github.com/0x6b6d/noctalia-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/0x6b6d/noctalia-plugins/actions/workflows/validate.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Noctalia](https://img.shields.io/badge/Noctalia-v5%20plugins-purple)](https://github.com/noctalia-dev/noctalia)
 
 ![repo logo](thumbnail.webp)
